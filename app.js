@@ -1,7 +1,7 @@
 "use strict"
 
 const fs = require("fs")
-const {Parser, PartialInvalidStringError, EmptyStringError, InvalidStringError} = require("./parser")
+const {Parser, PartialInvalidStringError, EmptyStringError, InvalidStringError} = require("./parser.js")
 console.log(process.argv/*.slice(2)*/); //prints the arguments as an array, the slice cuts the first two since we don't need them
 const argies = process.argv.slice(2)
 const fileToRead = argies[0]
