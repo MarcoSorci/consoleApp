@@ -14,10 +14,11 @@ class PartialInvalidStringError extends Error {
         this.partialResult = partialResult
     }
 }
+let parsedArray = []
 class Parser {
 
     static stringparser(string) {
-        let parsedArray = []
+        
         let stringNumber = string
         stringNumber = (string.replace(/[,]+/, ".")).replace(/[ ]/g, "")
         if (stringNumber.length > 0) {
@@ -45,6 +46,35 @@ class Parser {
         } else {
             return newArray
         }
+    }
+
+    static stringSplitter(string){
+        let stringNumber = string
+        stringNumber = (string.replace(/[,]+/, ".")).replace(/[ ]/g, "")
+        if (stringNumber.length > 0) {
+            parsedArray = stringNumber.split(/\r?\n/);
+        }
+        // let rightCount = 0
+        // let newArray = []
+        // for (let i = 0; i < parsedArray.length; i++) {
+        //     const element = parsedArray[i];
+        //     if (!isNaN(element)) {
+        //         rightCount++
+        //         newArray.push(parseFloat(element))
+        //     }
+        // }
+        // if (parsedArray.length === rightCount) {
+        //     console.log("the string has been fully parsed");
+        // } else if (rightCount > 0 && rightCount < parsedArray.length) {
+        //     throw new PartialInvalidStringError("Partially invalid string, the result was: " + (this.partialResult = newArray))
+        // } else if (rightCount = 0) {
+        //     throw new InvalidStringError("The entire string is invalid")
+        // }
+        // if (newArray.length === 0) {
+        //     throw new EmptyStringError("The string is empty")        
+        // } else {
+        //     return newArray
+        // }
     }
 }
 
