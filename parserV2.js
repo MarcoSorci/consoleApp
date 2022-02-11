@@ -42,7 +42,7 @@ class ParserV2 {
     }
 
     static splitByLine(string) {
-        const lines = string.split(/\n?\r/);
+        const lines = string.split(/\r?\n/);
         return lines
     }
 
