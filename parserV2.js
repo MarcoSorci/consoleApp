@@ -1,27 +1,21 @@
 
-class Parser2 {
+class ParserV2 {
 
-    static parseCSVToArray(csv) {
+    static parseCSV(csv, outputType) {
         const cleanCSV = this.removeSpaces(this.changeCommawithFullStop(csv))
         const lines = this.splitByLine(cleanCSV);
         let array = [];
 
         for (const line of lines) {
             const lineArray = this.parseLine(line);
-            array = array.concat(lineArray);
+            if (outputType === "-a") {                  //if requesting array does the array bit, else by default does matrix
+                array = array.concat(lineArray);
+            } else {
+                array.push(lineArray);  //THIS IS HOW YOU DO MATRICES
+            }
         }
         return array;
-
-
     }
-
-    // static parseCSVToMatrix(csv) {
-
-    // }
-
-    // static parseCSV(csv) {
-
-    // }
 
     static parseWord(word) {
 
@@ -47,7 +41,6 @@ class Parser2 {
         return array;
     }
 
-
     static splitByLine(string) {
         const lines = string.split(/\n?\r/);
         return lines
@@ -72,4 +65,4 @@ class Parser2 {
 
 }
 
-module.exports = Parser2;
+module.exports = ParserV2;
