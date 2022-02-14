@@ -1,3 +1,5 @@
+//node appV3.js ./assets/input/test4.csv ./assets/output/test4_res.json
+
 "use strict"
 
 const fs = require("fs")
